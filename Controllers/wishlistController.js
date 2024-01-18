@@ -4,7 +4,7 @@ const wishlists = require('../Models/wishlistSchema')
 
 exports.addToWishlist=async(req,res)=>{
     //get an id
-    const {id,title,price,description,image}= req.body
+    const {id,title,price,description,category,image,rating}= req.body
     //userid 
     const userId = req.payload
     //get the details of particlar id
@@ -16,7 +16,7 @@ exports.addToWishlist=async(req,res)=>{
         }
         else{
             const newProdct = new wishlists({
-                id,title,price,description,image,userId
+                id,title,price,description,category,image,rating,userId
             })
             await newProdct.save()
             res.status(200).json(newProdct)

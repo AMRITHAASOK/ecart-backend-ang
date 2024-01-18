@@ -26,6 +26,16 @@ const wishlistSchema = new mongoose.Schema({
         type:String,
         required: true, 
     },
+    rating:{
+        rate:{
+            type:Number,
+            required: true,
+        },
+        count:{
+            type:Number,
+            required: true,
+        }
+    },
     userId:{
         type:String,
         required: true
